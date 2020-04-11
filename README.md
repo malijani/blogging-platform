@@ -1,1 +1,0 @@
-# Full featured django blogging project
