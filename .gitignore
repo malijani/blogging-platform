@@ -2,3 +2,4 @@
 .vscode/
 main/db.sqlite3
 main/main/__pycache__/
+main/blog/__pycache__/
