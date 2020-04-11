@@ -30,19 +30,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    ########Custom Apps########
+    'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
+    ###########################
     ######## Externals ########
     'django_jalali',
     'ckeditor',
     ###########################
-    ########Custom Apps########
-    'blog.apps.BlogConfig',
-    ###########################
+    ####### Internals #########
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    ##########################
 ]
 
 
