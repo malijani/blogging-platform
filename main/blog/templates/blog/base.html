@@ -6,27 +6,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% if title %}
-        <title class="rtl">&#x202E;وبلاگ - {{ title }}</title>
+        <title>وبلاگ - {{ title }}</title>
         {% else %}
-        <title class="rtl">&#x202E;وبلاگ</title>
+        <title>وبلاگ</title>
         {% endif %}
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap-rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/font-awesome.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
         <link rel="shortcut icon" type="image/png" href="{% static 'blog/img/favicon.ico' %}">
     </head>
 
     <body>
-        {% comment %} Main content will be here {% endcomment %}
-
-        <div class="container">
+        <header class="site-header rtl">
+            {% include "blog/partials/_navbar.html" %}
+        </header>
+        <!-- Main section-->
+        <main role="main" class="container rtl">
             <div class="row">
-                <div class="col-5">
-                    {% block content %}
-                    {% endblock content %}
+                <div class="col-9">
+                    {% block content %}{% endblock %}
                 </div>
+                {% include "blog/partials/_sidebar.html" %}
             </div>
-        </div>
+        </main>
+
 
 
         <script src="{% static 'blog/js/jquery-3.4.1.min.js' %}"></script>
