@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     ######## Externals ########
     'django_jalali',
     'ckeditor',
+    'crispy_forms',
     ###########################
     ####### Internals #########
     'django.contrib.admin',
@@ -48,19 +49,6 @@ INSTALLED_APPS = [
     ##########################
 ]
 
-
-##### CKEDITOR CONFIGURATION #####
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-        'height': 300,
-        'width': 800,
-    },
-    'awesome_ckeditor': {
-        'toolbar': 'Basic',
-    },
-}
-#################################
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,3 +129,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+##### CKEDITOR CONFIGURATION #####
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 800,
+    },
+    'awesome_ckeditor': {
+        'toolbar': 'Basic',
+    },
+}
+#################################
+
+##### CRISPY CONFIGURATION ######
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#################################
