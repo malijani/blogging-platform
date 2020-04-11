@@ -1,6 +1,19 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("<h1>Blog Home</h1>")
+    # Frontend configuration
+    template_name = 'blog/home.html'
+    context = {
+
+    }
+    return render(request, template_name, context)
+
+
+def about(request):
+    # Frontend configuration
+    template_name = 'blog/about.html'
+    context = {
+
+    }
+    return render(request, template_name, context)
