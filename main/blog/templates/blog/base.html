@@ -22,12 +22,14 @@
             {% include "blog/partials/_navbar.html" %}
         </header>
         <!-- Main section-->
-        <main role="main" class="container rtl">
+        <main role="main" class="container-fluid rtl">
             <div class="row">
-                <div class="col-9">
+                <div class="col-lg-9 col-md-12">
                     {% block content %}{% endblock %}
                 </div>
-                {% include "blog/partials/_sidebar.html" %}
+                <div class="col-lg-3 d-md-none">
+                    {% include "blog/partials/_sidebar.html" %}
+                </div>
             </div>
         </main>
 
