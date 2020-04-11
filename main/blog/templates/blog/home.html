@@ -7,8 +7,20 @@
 <article class="media content-section">
     <div class="media-body">
         <div class="article-metadata text-muted">
-            <small class="m-1"><a href="#">{{ post.author }}</a></small>
-            <small class="m-1">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
+            <span>
+                <small class="m-1">
+                    <a href="#">
+                        {% if post.author.first_name %}
+                        {{ post.author.first_name }}
+                        {% else %}
+                        {{ post.author }}
+                        {% endif %}
+                    </a>
+                </small>
+            </span>
+            <span>
+                <small class="m-1">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
+            </span>
         </div>
         <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
         <p class="article-content">{{ post.content|safe|truncatewords_html:40 }}</p>

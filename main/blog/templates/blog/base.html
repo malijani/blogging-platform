@@ -18,6 +18,7 @@
     </head>
 
     <body>
+        <!-- Navigation bar-->
         <header class="site-header rtl">
             {% include "blog/partials/_navbar.html" %}
         </header>
@@ -25,6 +26,13 @@
         <main role="main" class="container rtl">
             <div class="row">
                 <div class="col-lg-9 col-md-12">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
                     {% block content %}{% endblock %}
                 </div>
                 <div class="col-lg-3 col-md-12">
