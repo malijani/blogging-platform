@@ -2,4 +2,6 @@
 .vscode/
 main/db.sqlite3
 main/main/__pycache__/
+main/blog/migrations/__pycache__/
 main/blog/__pycache__/
+node_modules/
