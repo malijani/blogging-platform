@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if title %}
+        <title class="rtl">&#x202E;وبلاگ - {{ title }}</title>
+        {% else %}
+        <title class="rtl">&#x202E;وبلاگ</title>
+        {% endif %}
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap-rtl.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'blog/img/favicon.ico' %}">
+    </head>
+
+    <body>
+        {% comment %} Main content will be here {% endcomment %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+
+
+        <script src="{% static 'blog/js/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'blog/js/popper.min.js' %}"></script>
+        <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'blog/js/blog.js' %}"></script>
+    </body>
+
+</html>
