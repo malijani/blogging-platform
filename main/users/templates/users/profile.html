@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="content-section">
+    <div class="media">
+        <div class="img">
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        </div>
+        <div class="media-body">
+            {% if user.first_name %}
+            <h2 class="account-heading text-center">{{ user.first_name }}</h2>
+            {% else %}
+            <h2 class="account-heading text-center">{{ user.username }}</h2>
+            {% endif %}
+            <p class="text-secondary text-center">{{ user.email }}</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

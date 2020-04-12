@@ -2,25 +2,23 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
 <div class="content-section">
     <form action="" method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">
-                به ما ملحق بشید!
+                ورود به حساب کاربری
                 {{ form|crispy }}
             </legend>
         </fieldset>
         <div class="form-group">
-            <button type="submit" class="btn btn-outline-info">ثبت نام</button>
+            <button type="submit" class="btn btn-outline-info">ورود</button>
         </div>
     </form>
     <div class="border-top pt-3">
         <small class="text-muted">
-            حساب کاربری دارید؟ <a href="{% url 'users:login' %}" class="ml-2">ورود به حساب کاربری</a>
+            حساب کاربری ندارید؟ <a href="{% url 'users:register' %}" class="ml-2">ثبت نام کنید!</a>
         </small>
     </div>
 </div>
-
 {% endblock content %}
