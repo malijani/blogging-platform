@@ -32,8 +32,11 @@
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="index.html#">ورود</a>
+                
+                <a class="nav-item nav-link" href="../login/index.html">ورود</a>
                 <a class="nav-item nav-link" href="index.html">ثبت نام</a>
+                
+
             </div>
         </div>
     </div>
@@ -48,7 +51,7 @@
 
 <div class="content-section">
     <form action="index.html" method="POST">
-        <input type="hidden" name="csrfmiddlewaretoken" value="FGkgC9ypoFtI8GUVqIXmQsrDvtepw4NQi2v013j6LfcAuJolC6zkcaCMcs3fOoRs">
+        <input type="hidden" name="csrfmiddlewaretoken" value="NAAlOUxilIKyL2fa39RJ8rmVsoqmdSOKXUoMT4C52LMYqTHXGKUPddxQ6vrzRzx8">
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">
                 به ما ملحق بشید!
@@ -56,10 +59,10 @@
 
 <div id="div_id_first_name" class="form-group"> <label for="id_first_name" class=" requiredField">
                 First name<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="first_name" maxlength="100" class="textinput textInput form-control" required id="id_first_name"> </div> </div> <div id="div_id_username" class="form-group"> <label for="id_username" class=" requiredField">
-                نام کاربری<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control" required id="id_username"> <small id="hint_id_username" class="form-text text-muted">الزامی. 150 کاراکتر یا کمتر. فقط شامل حروف، اعداد، و علامات @/./+/-/_</small> </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
+                Username<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control" required id="id_username"> <small id="hint_id_username" class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small> </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class=" requiredField">
                 Email<span class="asteriskField">*</span> </label> <div class=""> <input type="email" name="email" class="emailinput form-control" required id="id_email"> </div> </div> <div id="div_id_password1" class="form-group"> <label for="id_password1" class=" requiredField">
-                گذرواژه<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control" required id="id_password1"> <small id="hint_id_password1" class="form-text text-muted"><ul><li>Your password can’t be too similar to your other personal information.</li><li>رمز عبور شما می‌بایست حداقل از 8 حرف تشکیل شده باشد.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small> </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField">
-                تأیید گذرواژه<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required id="id_password2"> <small id="hint_id_password2" class="form-text text-muted">برای تائید، رمز عبور قبلی را وارد کنید.</small> </div> </div>
+                Password<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password1" autocomplete="new-password" class="textinput textInput form-control" required id="id_password1"> <small id="hint_id_password1" class="form-text text-muted"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small> </div> </div> <div id="div_id_password2" class="form-group"> <label for="id_password2" class=" requiredField">
+                Password confirmation<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password2" autocomplete="new-password" class="textinput textInput form-control" required id="id_password2"> <small id="hint_id_password2" class="form-text text-muted">Enter the same password as before, for verification.</small> </div> </div>
 
             </legend>
         </fieldset>
@@ -69,7 +72,7 @@
     </form>
     <div class="border-top pt-3">
         <small class="text-muted">
-            حساب کاربری دارید؟ <a href="index.html#" class="ml-2">ورود به حساب کاربری</a>
+            حساب کاربری دارید؟ <a href="../login/index.html" class="ml-2">ورود به حساب کاربری</a>
         </small>
     </div>
 </div>
