@@ -7,10 +7,8 @@
     <form action="" method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">
-                به ما ملحق بشید!
-                {{ form|crispy }}
-            </legend>
+            <legend class="border-bottom mb-4">به ما ملحق بشید!</legend>
+            {{ form|crispy }}
         </fieldset>
         <div class="form-group">
             <button type="submit" class="btn btn-outline-info">ثبت نام</button>
