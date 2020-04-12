@@ -5,10 +5,11 @@
 
 {% for post in posts %}
 <article class="media content-section">
+    <img src="{{ post.author.profile.image.url }}" alt="نمایه" class="rounded-circle article-img">
     <div class="media-body">
-        <div class="article-metadata text-muted">
+        <div class="article-metadata">
             <span>
-                <small class="m-1">
+                <small class="m-1 text-muted">
                     <a href="#">
                         {% if post.author.first_name %}
                         {{ post.author.first_name }}
@@ -19,11 +20,12 @@
                 </small>
             </span>
             <span>
-                <small class="m-1">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
+
             </span>
         </div>
         <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
         <p class="article-content">{{ post.content|safe|truncatewords_html:40 }}</p>
+        <small class="m-1 text-muted float-left">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
     </div>
 </article>
 {% endfor %}
