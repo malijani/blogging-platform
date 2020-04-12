@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="content-section">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">حذف پست</legend>
+            <h1>آیا در مورد حذف کردن پست مطمعنید؟</h1>
+            <hr>
+            <h2>{{ object.title }}</h2>
+            <p>{{ object.content|safe|truncatewords_html:40 }}</p>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit"> حذف پست</button>
+            <a class="btn btn-outline-secondary" href="{% url 'blog:detail' object.id %}">انصراف</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
