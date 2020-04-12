@@ -5,5 +5,6 @@ main/main/__pycache__/
 main/blog/migrations/__pycache__/
 main/blog/__pycache__/
 main/users/migrations/__pycache__/
+main/users/__pycache__/
 node_modules/
 localhost:8000/
