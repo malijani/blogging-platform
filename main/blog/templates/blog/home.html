@@ -8,24 +8,22 @@
     <img src="{{ post.author.profile.image.url }}" alt="نمایه" class="rounded-circle article-img">
     <div class="media-body">
         <div class="article-metadata">
-            <span>
-                <small class="m-1 text-muted">
-                    <a href="#">
-                        {% if post.author.first_name %}
-                        {{ post.author.first_name }}
-                        {% else %}
-                        {{ post.author }}
-                        {% endif %}
-                    </a>
-                </small>
-            </span>
-            <span>
-
-            </span>
+            <small class="m-1 text-muted float-left">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
+            <small class="m-1 text-muted">
+                <a href="#">
+                    {% if post.author.first_name %}
+                    {{ post.author.first_name }}
+                    {% else %}
+                    {{ post.author }}
+                    {% endif %}
+                </a>
+            </small>
         </div>
-        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+
+        <h2><a class="article-title" href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h2>
+
         <p class="article-content">{{ post.content|safe|truncatewords_html:40 }}</p>
-        <small class="m-1 text-muted float-left">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
+
     </div>
 </article>
 {% endfor %}

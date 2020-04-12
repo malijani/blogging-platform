@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% load jformat %}
+{% block content %}
+<img src="{{ post.author.profile.image.url }}" alt="نمایه" class="rounded-circle article-img">
+<div class="media-body">
+    <div class="article-metadata">
+        <small class="m-1 text-muted">
+            <a href="#">
+                {% if object.author.first_name %}
+                {{ object.author.first_name }}
+                {% else %}
+                {{ object.author }}
+                {% endif %}
+            </a>
+        </small>
+        <small class="m-1 text-muted float-left">{{ object.date_posted|jformat:"%B %d, %Y" }}</small>
+    </div>
+    <h2 class="article-title">{{ object.title }}</h2>
+    <p class="article-content">{{ object.content|safe }}</p>
+
+</div>
+</article>
+{% endblock content %}
