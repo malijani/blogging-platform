@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -130,6 +130,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 ##### CKEDITOR CONFIGURATION #####
 CKEDITOR_CONFIGS = {
@@ -147,3 +149,11 @@ CKEDITOR_CONFIGS = {
 ##### CRISPY CONFIGURATION ######
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #################################
+
+##### LOGIN REDIRECT ############
+LOGIN_REDIRECT_URL = 'blog:home'
+#################################
+
+##### LOGIN URL ################
+LOGIN_URL = 'users:login'
+################################
