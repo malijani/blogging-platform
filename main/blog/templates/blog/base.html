@@ -26,6 +26,7 @@
         <main role="main" class="container rtl">
             <div class="row">
                 <div class="col-lg-9 col-md-12">
+                    {% comment %} show messages {% endcomment %}
                     {% if messages %}
                     {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -33,7 +34,10 @@
                     </div>
                     {% endfor %}
                     {% endif %}
+                    {% comment %} main content {% endcomment %}
                     {% block content %}{% endblock %}
+                    {% comment %} pagination bar {% endcomment %}
+                    {% include "blog/partials/_pagination.html" %}
                 </div>
                 <div class="col-lg-3 col-md-12">
                     {% include "blog/partials/_sidebar.html" %}
