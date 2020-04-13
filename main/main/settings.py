@@ -123,7 +123,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+#LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fa-IR'
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -146,12 +147,29 @@ MEDIA_URL = '/media/'
 ##### CKEDITOR CONFIGURATION #####
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'toolbar': 'Custom',
         'height': 300,
         'width': 800,
-    },
-    'awesome_ckeditor': {
-        'toolbar': 'Basic',
+        'toolbar_Custom': [
+            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+            '-',
+            {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike',
+                                              'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat']},
+            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+            {'name': 'clipboard', 'items': [
+                'Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo']},
+            {'name': 'document', 'items': [
+                'Source', '-', 'Preview']},
+            {'name': 'editing', 'items': [
+                'Find', 'Replace', '-', 'SelectAll']},
+            {'name': 'insert', 'items': [
+                'Smiley', 'Image', 'Flash', 'Table', 'HorizontalRule',  'SpecialChar', 'PageBreak']},
+            {'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv',
+                                            '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']},
+            {'name': 'styles', 'items': [
+                'Styles', 'Format', 'Font', 'FontSize']},
+        ]
     },
 }
 #################################
