@@ -31,8 +31,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -188,3 +188,11 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 #AWS_DEFAULT_ACL = None
 #DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 ###############################
+
+#### DEPLOY CHECK CONFIGURATION ####
+#CSRF_COOKIE_SECURE = True
+#SESSION_COOKIE_SECURE = True
+#SECURE_REFERRER_POLICY = "origin"
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+#SECURE_SSL_REDIRECT = True
+####################################
