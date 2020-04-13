@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import json
+
+
+# Read config file | use /etc/ dir to locate config file
+with open('config.json') as config_file:
+    config = json.load(config_file)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +26,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c)&4l2!vd4)y8p7(^+q=e$hun22aqo3!+3)!%^g%)kyzy1u(o9'
+SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -128,6 +135,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -164,8 +172,17 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 ##### PRIVATE VARIABLE ##########
-#EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_USER = "STRINGIFIED_EMAIL"
-#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-EMAIL_HOST_PASSWORD = "STRINGIFIED_PASSWORD"
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+#EMAIL_HOST_USER = "STRINGIFIED_EMAIL"
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+#EMAIL_HOST_PASSWORD = "STRINGIFIED_PASSWORD"
 ################################
+
+###### AWS CONFIGURATION ######
+#AWS_ACCESS_KEY_ID = ""
+#AWS_SECRET_ACCESS_KEY = ""
+#AWS_STORAGE_BUCKET_NAME = ""
+#AWS_S3_FILE_OVERWRITE = False
+#AWS_DEFAULT_ACL = None
+#DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+###############################
