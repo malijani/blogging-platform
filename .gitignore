@@ -1,5 +1,6 @@
 .venv/
 .vscode/
+main/static
 main/db.sqlite3
 main/main/__pycache__/
 main/blog/migrations/__pycache__/
