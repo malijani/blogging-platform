@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %}
 {% load jformat %}
 {% block content %}
-<img src="{{ post.author.profile.image.url }}" alt="نمایه" class="rounded-circle article-img">
+<img src="{{ object.author.profile.image.url }}" alt="نمایه" class="rounded-circle article-img">
 <div class="media-body">
     <div class="article-metadata">
         <small class="m-1 text-muted">
-            <a href="#">
+            <a href="{% url 'blog:profile' object.author.username %}">
                 {% if object.author.first_name %}
                 {{ object.author.first_name }}
                 {% else %}
