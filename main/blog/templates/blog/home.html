@@ -10,7 +10,7 @@
         <div class="article-metadata">
             <small class="m-1 text-muted float-left">{{ post.date_posted|jformat:"%B %d, %Y" }}</small>
             <small class="m-1 text-muted">
-                <a href="#">
+                <a href="{% url 'blog:profile' post.author.username %}">
                     {% if post.author.first_name %}
                     {{ post.author.first_name }}
                     {% else %}
@@ -18,12 +18,17 @@
                     {% endif %}
                 </a>
             </small>
+            {% if post.author == user and user.is_authenticated  %}
+            <div>
+                <a class="btn btn-outline-secondary btn-sm mt-1 mb-1 ml-1" href="{% url 'blog:update' post.id %}"
+                    data-toogle="tooltip" title="ویرایش پست"><i class="fas fa-edit"></i></a>
+                <a class="btn btn-outline-danger btn-sm mt-1 mb-1 ml-1" href="{% url 'blog:delete' post.id %}"
+                    data-toogle="tooltip" title="حذف پست"><i class="fas fa-trash"></i></a>
+            </div>
+            {% endif %}
         </div>
-
-        <h2><a class="article-title" href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h2>
-
-        <p class="article-content">{{ post.content|safe|truncatewords_html:40 }}</p>
-
+        <h3><a class="article-title" href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h3>
+        <p class="article-content">{{ post.content|safe|truncatewords_html:100 }}</p>
     </div>
 </article>
 {% endfor %}
