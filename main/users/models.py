@@ -10,8 +10,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self):
-        super().save()
+    # Automatically resize images for """ local storage """
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
         # Resize image when profile is saved
         img = Image.open(self.image.path)
 
